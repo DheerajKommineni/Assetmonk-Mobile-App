@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1" style="position: relative;top: 5px;">
+        <mat-icon (click)="back()" [routerLink]="['/login']">keyboard_arrow_left</mat-icon>
+      </ion-col>
+      <ion-col>
+        <h2 style="font-style: large;font-weight: bold;text-shadow: 1px black;letter-spacing: 1px;">Verify your phone no.</h2>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid style="width:290px;position: absolute;left: 50%;margin-left: -145px;top: 15%;">
+    <ion-row>
+      <ion-col size="2">
+        <ion-input #otp1 pattern="\d*" maxLength="1" [(ngModel)]="OTP.first"  style="background-color: rgb(243, 241, 241);height: 30px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+        (keyup)="otpController($event,otp2,'')" text-center>
+        </ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input #otp2 maxLength="1" pattern="[0-9]*" [(ngModel)]="OTP.second"  style="background-color: rgb(243, 241, 241);height: 30px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+        (keyup)="otpController($event,otp3,otp1)">
+        </ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input #otp3 maxLength="1" [(ngModel)]="OTP.third"  style="background-color: rgb(243, 241, 241);height: 30px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+        (keyup)="otpController($event,otp4,otp2)">
+        </ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input #otp4 maxLength="1" [(ngModel)]="OTP.forth"  style="background-color: rgb(243, 241, 241);height: 30px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+        (keyup)="otpController($event,otp5,otp3)">
+        </ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input #otp5 maxLength="1" [(ngModel)]="OTP.fifth"  style="background-color: rgb(243, 241, 241);height: 30px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+        (keyup)="otpController($event,otp6,otp4)">
+        </ion-input>
+      </ion-col>
+      <ion-col size="2">
+        <ion-input #otp6 maxLength="1" [(ngModel)]="OTP.sixth"  style="background-color: rgb(243, 241, 241);height: 30px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+        (keyup)="otpController($event,'',otp5)">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <br />
+    <br />
+    <ion-row style="width: 100%;text-align: center;position: relative;bottom: 10px;">
+        <p text-center style="color: black;font-size: 12px;font-weight: 200;
+        width: 40px;position: absolute;left: 50%;margin-left: -20px;">{{displayTime}}</p>
+    </ion-row>
+    <br />
+    <div style="width: 100%;text-align: center;">
+      <span style="font-size: 12px;font-weight: 300;">Didn't receive the OTP? </span>
+      <a style="color: #5D66FF;font-size: 12px;" (click)="resend()" ><b>Resend</b></a>
+    </div>
+  </ion-grid>
+  <br />
+  <ion-button style="position: absolute;top: 60%;width: 290px;left: 50%;margin-left: -145px;" color="secondary" (click)="submit()">
+    Verify
+  </ion-button>
+</ion-content>

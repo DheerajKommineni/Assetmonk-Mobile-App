@@ -1,0 +1,85 @@
+
+<!-- <ion-header>
+  <ion-toolbar color="tertiary  ">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header> -->
+
+<ion-app >
+ 
+    <ion-menu contentId="main-content" side="start" *ngIf="showComponent">
+      <ion-header style="height: 70px;">
+        <ion-menu-toggle side="end" >
+          <ion-toolbar style="margin-top: 10px;" routerDirection="root" [class.active-menu]="activePath === Profile" 
+          [routerLink]="['/home/Profile']" >
+            <div style="position:relative;left: 30px;top: 2px;">
+              <ion-img style="width:37px;size: 32px;" src="../assets/icon/headerimg.png" ></ion-img>
+            </div>
+            <ion-title>
+              <!-- Main Title <br />
+              <span style="opacity: 0.5;font-size: 10px;">My Profile</span> -->
+              <ion-grid ><ion-row style="height: 10px;">
+                <b><P style="font-size: 16px;">{{username[0]}}</P></b>
+              </ion-row>
+              <ion-row style=" position: relative;top:8px ;"> <span style="opacity: 0.5;font-size: 10px;">My Profile</span></ion-row>
+            </ion-grid>
+            </ion-title>
+          </ion-toolbar>
+        </ion-menu-toggle>   
+      </ion-header>
+      <ion-content >
+        <ion-list>
+          <ion-menu-toggle mode="md"  style="width: 100%;" *ngFor="let page of pages; let i=index;">
+              <ion-item lines="none"  style="height: 70px;width: 100%;border-bottom: 0.2px solid rgb(230, 229, 229);" [routerLink]="page.url" 
+            routerDirection="root" [class.active-menu]="activePath === page.path">
+            <div *ngIf="i==0" slot="start" style="margin: 0px;padding-left: 2px;position: relative;top: 13px;">
+              <mat-icon style="height: 20px;width: 20px;" svgIcon="sideportfolio" ></mat-icon>
+            </div>
+            <div *ngIf="i==1" slot="start" style="margin: 0px;position: relative;top: 13px;">
+              <mat-icon svgIcon="sidebulb"></mat-icon>
+            </div>
+            <div *ngIf="i==2" slot="start" style="margin: 0px;padding-left: 2px;position: relative;top: 13px;">
+              <mat-icon style="height: 20px;width: 20px;" svgIcon="sideearnings"></mat-icon>
+            </div>
+            <div *ngIf="i==3" slot="start" style="margin: 0px;position: relative;top: 13px;">
+              <mat-icon svgIcon="sidenotifications"></mat-icon>
+            </div>
+            <div *ngIf="i==4" slot="start" style="margin: 0px;padding-left: 2px;position: relative;top: 13px;">
+              <mat-icon style="height: 20px;width: 20px;" svgIcon="sideblockchain"></mat-icon>
+            </div>
+            <div *ngIf="i==5" slot="start" style="margin: 0px;position: relative;top: 13px;">
+              <mat-icon style="height: 24px;width: 24px;"  svgIcon="sidemessage"></mat-icon>
+            </div>
+            <div *ngIf="i==6" slot="start" style="margin: 0px;position: relative;top: 13px;">
+              <mat-icon style="height: 24px;width: 24px;" svgIcon="sideglobe"></mat-icon>
+            </div>
+            <div *ngIf="i==7" slot="start" style="margin: 0px;position: relative;top: 13px;">
+              <mat-icon svgIcon="sidesettings"></mat-icon>
+            </div>
+            <p style="position: relative;left: 15px;margin-bottom: 3px;top:50%;margin-top: -20px;"> {{page.title}}</p>
+            </ion-item>
+            <ion-item lines="none" *ngIf="i==6" style="height: 70px;width: 100%;border-bottom: 0.2px solid rgb(230, 229, 229);">
+              <p style="position: relative;left: 40px;margin-bottom: 3px;top:50%;margin-top: -20px;opacity: 0.7;"> About us</p>
+            </ion-item>
+            <ion-item lines="none" *ngIf="i==6" style="height: 70px;width: 100%;border-bottom: 0.2px solid rgb(230, 229, 229);">
+              <p style="position: relative;left: 40px;margin-bottom: 3px;top:50%;margin-top: -20px;opacity: 0.7;"> Terms & Conditions</p>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- <ion-item lines="none" (click)="ThemeSwitcher()">
+            <mat-icon>emoji_objects</mat-icon>
+            <ion-label>
+              Dark/Light Mode
+            </ion-label>
+          </ion-item> -->
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+ 
+ <!-- <ion-router-outlet>
+
+  </ion-router-outlet> -->
+  </ion-app>

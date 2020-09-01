@@ -1,0 +1,80 @@
+.square{
+    width: 20px;
+    height:20px;
+    opacity:0.2;
+    // background: var(--ion-color-primary)
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    //   padding: 10px
+    }
+  
+    to {
+      opacity: 7;
+      
+    }
+  }
+  @keyframes fivePhasesFadeIn {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fivePhasesFadeOut {
+    100% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 0.75;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      25% {
+        opacity: 0.25;
+      }
+    0% {
+      opacity: 1;
+    }
+  }
+  .fivePhasesFadeIn {
+    animation-name: fivePhasesFadeIn;
+    animation-duration: 2s;
+  }
+  .fivePhasesFadeOut {
+    animation-name: fivePhasesFadeOut;
+    animation-duration: 2s;
+  }
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+  }
+  .button{
+      border-color: white;
+      background-color: white;
+  }
+ 
+  ion-checkbox .item-cover{
+    display:none;
+  }
+:host .mat-button-toggle-group{
+    border-radius: 20px !important;
+}
+

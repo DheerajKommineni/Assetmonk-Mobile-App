@@ -1,0 +1,73 @@
+
+  <ion-content>
+    <div  style="position:absolute;top:10%;left: 50%;width: 150px;margin-left: -75px;"><img horizontal="center" style="height: 70px;text-align: center;"  src="../assets/icon/logo.png">
+    <!-- <br />
+    <br />
+    <p style="opacity: 0.5;">Welcome! <br />
+      Please login to your account
+    </p> -->
+    </div>
+    <form [formGroup]="profileform" ngSubmit="Signin()" style="align-items: center;position: absolute;top: 24%;">
+      
+          <!-- <mat-label style="position: relative;right: 79.5px;">
+            <mat-icon svgIcon="email" style="position: relative;right: 20px;"></mat-icon>
+           <span style="position: relative;right: 1px;bottom: 2px;">Email id</span> </mat-label>
+          <input matInput type="text"  [(ngModel)]="postData.email" [ngModelOptions]="{standalone: true}"> -->  
+     <div class="example-container"  style="height: 320px;text-align: center;">
+      <div class="form-group" horizontal="center">
+        <mat-label  style="width: 270px;position: absolute;left: 50%;margin-left: -135px;text-align: start;opacity: 0.6;font-size: 11px;">Email Id </mat-label>
+        <mat-form-field appearance="none"   style="text-align: center;width: 270px;position: absolute;left: 50%;margin-left: -135px;">
+          <input matInput type="text" formControlName="EmailId" style="background-color: rgb(243, 241, 241);height: 40px;text-align: start;border-bottom: 1px solid #d1d0d0;"
+           >
+          <mat-error *ngIf="EmailId.invalid">{{getEmailErrorMessage(EmailId)}}</mat-error>
+        </mat-form-field>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+        <div class="form-group" horizontal="center">
+          <mat-label  style="width: 270px;position: absolute;left: 50%;margin-left: -135px;text-align: start;opacity: 0.6;font-size: 11px;">Password </mat-label>
+          <mat-form-field appearance="none"  style="text-align: center;width: 270px;position: absolute;left: 50%;margin-left: -135px;">
+            <input matInput type="password" formControlName="Password" style="background-color: rgb(243, 241, 241);height: 40px;text-align: start;border-bottom: 1px solid #d1d0d0;" 
+              required minlength="8">
+              <mat-error *ngIf="Password.invalid">Field is empty or you did not enter the details in appropriate format</mat-error>
+          </mat-form-field>
+      </div>
+     <br />
+     <br />
+     <br />
+        <!-- <br />
+        <mat-form-field  style="text-align: center;width: 270px;position: relative;">
+            <mat-label style="position: relative;right: 74px;">
+              <mat-icon svgIcon="lock" style="position: relative;right: 20px;"></mat-icon>
+             <span style="position: relative;right: 1px;bottom: 2px;">Password</span> </mat-label>
+            <input matInput type="password" style="padding-bottom: 0px;"  [(ngModel)]="postData.password" [ngModelOptions]="{standalone: true}">
+          </mat-form-field> -->
+            <div style="position: relative;right: 48px;width:375px">
+              <input type="checkbox" style="height: 10px;width: 10px;">
+              <label style="font-size: 11px;position: relative;bottom: 0.5px;left: 8px;">Remember me</label>
+              <a [routerLink]="['/forgotpassword']" style="font-size: 11px;position: relative;
+              left: 101px;bottom: 1px;color: black;text-decoration: underline;">Forgot Password</a>
+            </div>
+            <ion-button color="secondary" mode="ios" (click)="Signin()" style="text-align: center;
+            width: 270px;position: relative;top: 45px;height: 36px;font-size: 14px;">Sign-in</ion-button>
+            <div style="text-align: center;position: relative;top: 82px;width: 100%;">
+              <span style="opacity: 0.5;font-size: 12px;padding-right: 4px;">Not a member? </span>
+              <a style="color: #5D66FF;text-decoration: none;" routerLink="../signup"><b>Sign-up</b></a></div>
+         </div>    
+      </form>
+      <p  style="opacity: 0.5;position: absolute;top: 90%;font-size: 11px;width: 130px;left: 50%;margin-left: -65px;">Term of use Privacy Policy</p>
+      <!-- <button mat-icon-button color="primary" (click)="toggleAnimation()" disableRipple=true
+      style="height: 30px; width:30px;padding-left: 100px;padding-top:100px ;">
+        <div #square class="square">
+            <mat-icon>home</mat-icon>
+        </div>
+      </button>
+      <button mat-icon-button color="primary" (click)="toggleAnimation2()" disableRipple=true
+      style="height: 40px; width:40px;padding-left: 100px;padding-top:100px ;">
+        <div #square1 class="square">
+            <mat-icon>settings</mat-icon>
+        </div>
+      </button> -->
+  </ion-content>
